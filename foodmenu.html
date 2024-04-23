@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="\HTML\Project\logowp.png" type="image/x-icon">
+    <title>Food Menu</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            /* font-family: Verdana, sans-serif; */
+            margin: 0;
+            /* line-height: 1.6; */
+            /* background-color: black; */
+            background-image: url();
+        }
+
+
+        /*cards*/
+        .cards .card {
+            text-align: center;
+            margin: 18px 10px 40px;
+            transition: 0.2s ease-in;
+        }
+
+        .cards .flex {
+            flex-wrap: wrap;
+        }
+
+        .cards .card h5 {
+            font-size: 15px;
+            margin: 10px 0px;
+        }
+
+        .cards .card img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .cards .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .mobile {
+            display: none;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .card {
+            color: black;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+                rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+                rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 12px 14px;
+            padding: 25px;
+            margin: 10px;
+        }
+
+        .cards {
+            margin: 0 auto;
+            overflow: auto;
+        }
+
+        /* .card {
+            padding: 15px;
+        } */
+        @media (max-width: 1100px) {
+            .container .flex {
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        .cards .flex {
+            flex-direction: row;
+        }
+
+
+        /*=============== HOME ===============*/
+        .home {
+            background-image: url(https://raw.githubusercontent.com/freetimezp/js-eatme-06-foodio/main/assets/img/home-bg.jpg);
+            padding-block: 12.5rem 4.25rem;
+            position: relative;
+        }
+        .home::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 30%;
+            width: 980px;
+            height: 400px;
+            background-color: var(--second-color);
+            border-radius: 12rem 0 0 12rem;
+        }
+        .mySlides {
+            display: none
+        }
+        img {
+            vertical-align: middle;
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -20px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: -10rem;
+            /* border-radius: 3px 0 0 3px; */
+        }
+        .prev {
+            left: -10rem;
+            /* border-radius: 0 3px 3px 0; */
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: transparent;
+            /*  rgba(0, 0, 0, 0.8) */
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/4 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .prev,
+            .next,
+            .text {
+                font-size: 11px
+            }
+        }
+
+        /* Restaurant Menu */
+        .category {
+            list-style: none;
+            text-align: center;
+            margin: 20px 0 40px 0;
+        }
+        .category li {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 20px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+        .category li.active {
+            color: var(--clr-primary);
+        }
+        .restaurant-menu {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .menu-item {
+            width: 260px;
+            margin: 0 auto;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .menu-item img {
+            width: 100%;
+        }
+        .order {
+            justify-content: space-between;
+        }
+        .btn-menu {
+            padding: 6px 10px;
+            font-size: 16px;
+            text-align: center;
+            background: #fff;
+            border: 1px solid var(--clr-primary);
+            color: var(--clr-primary);
+        }
+        .title {
+            font-size: 18px;
+            font-weight: 300;
+            margin: 8px 0;
+        }
+            .location {
+                font-size: 18px;
+                font-weight: 500;
+            }
+        /* End Restaurant Menu */
+    </style>
+
+    <script>
+        /*=============== SHOW MENU ===============*/
+        // const navMenu = document.getElementById("nav-menu");
+        // const navClose = document.getElementById("nav-close");
+        // const navToggle = document.getElementById("nav-toggle");
+
+        /*===== MENU SHOW =====*/
+        /* Validate if constant exists */
+        // if (navToggle) {
+        //     navToggle.addEventListener("click", () => {
+        //         navMenu.classList.add("show-menu");
+        //     });
+        // }
+
+        /*===== MENU HIDDEN =====*/
+        /* Validate if constant exists */
+        // if (navClose) {
+        //     navClose.addEventListener("click", () => {
+        //         navMenu.classList.remove("show-menu");
+        //     });
+        // }
+        /*=============== REMOVE MENU MOBILE ===============*/
+        /*=============== HOME SWIPER ===============*/
+        // var homeSwiper = new Swiper(".home-swiper", {
+        //     spaceBetween: 30,
+        //     grubCursor: true,
+        //     loop: true,
+        //     pagination: {
+        //         el: ".swiper-pagination",
+        //         clickable: true,
+        //     },
+        //     navigation: {
+        //         nextEl: ".swiper-button-next",
+        //         prevEl: ".swiper-button-prev",
+        //     },
+        // });
+
+        /*=============== DEALS TAB ===============*/
+        // const tabs = document.querySelectorAll("[data-target]");
+        // const tabContents = document.querySelectorAll("[content]");
+
+        // tabs.forEach((tab) => {
+        //     tab.addEventListener("click", () => {
+        //         const target = document.querySelector(tab.dataset.target);
+
+        //         tabContents.forEach((tabContent) => {
+        //             tabContent.classList.remove("active-tab");
+        //         });
+
+        //         target.classList.add("active-tab");
+        //         tabs.forEach((tab) => {
+        //             tab.classList.remove("active-tab");
+        //         });
+        //         tab.classList.add("active-tab");
+        //     });
+        // });
+
+        /*=============== SHOW SCROLL UP ===============*/
+        // function scrollUp() {
+        //     const scrollup = document.getElementById("scroll-up");
+
+        //     if (this.scrollY >= 300) {
+        //         scrollup.classList.add("show-scroll");
+        //     } else {
+        //         scrollup.classList.remove("show-scroll");
+        //     }
+        // }
+
+        // window.addEventListener("scroll", scrollUp);
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="cards">
+        <h2 class="header">What's on your mind? or what do you want eat today?</h2>
+        <div class="flex">
+            <div class="card">
+                <img src="https://media.istockphoto.com/photos/cheesy-pepperoni-pizza-picture-id938742222?k=6&m=938742222&s=612x612&w=0&h=on_9ZYG1SG4Xgk7BLZSlaXJl8VYb6ZePDHTN6zukDHM=" alt="pizza" onclick="window.open('projectfood.html' , '_blank');">
+                <h5>Pizza</h5>
+            </div>
+            <div class="card">
+                <img src="https://www.recipetineats.com/wp-content/uploads/2019/08/Avocado-Chicken-Burgers_9.jpg" alt="burger">
+                <h5>Burger</h5>
+            </div>
+            <div class="card">
+                <img src="https://media.istockphoto.com/photos/small-4inch-soft-beef-tacos-picture-id1146906219?k=6&m=1146906219&s=612x612&w=0&h=UNtK9oaNeIuVELKX_tcYemHvHDO82Um8hUKqqAaiMXY=" alt="tacos">
+                <h5>Tacos</h5>
+            </div>
+            <div class="card">
+                <img src="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Blue-Ribbon-Beef-Nachos_EXPS_THJJ21_12416_B02_10_9b.jpg" alt="nachos">
+                <h5>Nachos</h5>
+            </div>
+            <div class="card">
+                <img src="https://www.pcrm.org/sites/default/files/gingery-noodles-2.JPG" alt="noodles">
+                <h5>Noodles</h5>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <section class="home" id="home">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="https://raw.githubusercontent.com/freetimezp/js-eatme-06-foodio/main/assets/img/slide-1.png"
+                    style="width:100%" alt="burger" class="home__img">
+                <div class="text">Caption Text</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="https://raw.githubusercontent.com/freetimezp/js-eatme-06-foodio/main/assets/img/slide-2.png"
+                    style="width:100%" alt="burger" class="home__img">
+                <div class="text">Caption Two</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="https://raw.githubusercontent.com/freetimezp/js-eatme-06-foodio/main/assets/img/slide-3.png"
+                    style="width:100%" alt="burger" class="home__img">
+                <div class="text">Caption Three</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="https://raw.githubusercontent.com/freetimezp/js-eatme-06-foodio/main/assets/img/slide-4.png"
+                    style="width:100%" alt="burger" class="home__img">
+                <div class="text">Caption four</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+    </section>
+
+
+    <!-- Restaurant Menu -->
+    <div class="section" id="menu">
+        <div class="container">
+            <ul class="category">
+                <li class="active">All</li>
+                <li>Biryani</li>
+                <li>Chicken</li>
+                <li>Pizza</li>
+                <li>Burger</li>
+                <li>Pasta</li>
+            </ul>
+
+            <div class="container">
+                <div class="restaurant-menu">
+                    <div class="menu-item">
+                        <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-1.jpg"
+                            alt="" />
+
+                        <div class="title">Food Restaurant | Chineese & Thai</div>
+
+                        <div class="location">Lahore, Pakistan</div>
+
+                        <div class="order flex">
+                            <div class="price">$25.00</div>
+                            <a href="#" class="btn btn-menu">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-2.jpg"
+                            alt="" />
+
+                        <div class="title">Food Restaurant | Chineese & Thai</div>
+
+                        <div class="location">Lahore, Pakistan</div>
+
+                        <div class="order flex">
+                            <div class="price">$25.00</div>
+                            <a href="#" class="btn btn-menu">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-3.jpg"
+                            alt="" />
+
+                        <div class="title">Food Restaurant | Chineese & Thai</div>
+
+                        <div class="location">Lahore, Pakistan</div>
+
+                        <div class="order flex">
+                            <div class="price">$25.00</div>
+                            <a href="#" class="btn btn-menu">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-4.jpg"
+                            alt="" />
+
+                        <div class="title">Food Restaurant | Chineese & Thai</div>
+
+                        <div class="location">Lahore, Pakistan</div>
+
+                        <div class="order flex">
+                            <div class="price">$25.00</div>
+                            <a href="#" class="btn btn-menu">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-5.jpg"
+                            alt="" />
+
+                        <div class="title">Food Restaurant | Chineese & Thai</div>
+
+                        <div class="location">Lahore, Pakistan</div>
+
+                        <div class="order flex">
+                            <div class="price">$25.00</div>
+                            <a href="#" class="btn btn-menu">Order Now</a>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-6.jpg"
+                            alt="" />
+
+                        <div class="title">Food Restaurant | Chineese & Thai</div>
+
+                        <div class="location">Lahore, Pakistan</div>
+
+                        <div class="order flex">
+                            <div class="price">$25.00</div>
+                            <a href="#" class="btn btn-menu">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Restaurant Menu -->
+</body>
+
+</html>
