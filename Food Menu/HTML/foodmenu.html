@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/fast-food/Food Menu/img/logowp.png" type="image/x-icon">
+    <link rel="stylesheet" href="/fast-food/Food Menu/CSS/foodmenu.css">
+    <title>Food Menu</title>
+</head>
+
+<body>
+    <div class="h-full">
+        <header class="active" aria-hidden="true">
+            <div class="navb">
+                <div class="navbdiv h-10">
+                    <img width="50" height="40" src="/fast-food/Food Menu/img/logowp.png" alt="center">
+                </div>
+                <div class="navbmenu h-10">
+                    <ul class="ul-links">
+                        <li><a href="/fast-food/Home/HTML/projectfood.html">Home<span></span></a></li>
+                        <li><a href="/fast-food/Service/HTML/service.html">Services<span></span></a></li>
+                        <li><a href="/fast-food/About/HTML/about.html">About Us<span></span></a></li>
+                        <li><a href="/fast-food/Contact/HTML/contact.html">Contact Us<span></span></a></li>
+                    </ul>
+                </div>
+                <div class="credential">
+                    <button type="button" onclick="location.href='/fast-food/Login/HTML/Login.html'">
+                        log in
+                    </button>
+                    <button type="button" onclick="location.href='/fast-food/Registration/HTML/registration.html'">
+                        sign-up
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="cards">
+        <h2 class="header" style="color: #f2f2f2; margin-left: 24.5rem;">What's on your mind? or what do you want eat
+            today?</h2>
+        <div class="flex">
+            <div class="card">
+                <img src="/fast-food/Food Menu/img/img1.jpg" alt="pizza"
+                    onclick="window.open('/fast-food/Menu List/HTML/Pizza.html' , '_blank');">
+                <h5>Pizza</h5>
+            </div>
+            <div class="card">
+                <img src="/fast-food/Food Menu/img/img2.webp" alt="burger"
+                    onclick="window.open('/fast-food/Menu List/HTML/Burger.html' , '_blank');">
+                <h5>Burger</h5>
+            </div>
+            <div class="card">
+                <img src="/fast-food/Food Menu/img/img3.jpg" alt="tacos"
+                    onclick="window.open('/fast-food/Menu List/HTML/Tacos.html' , '_blank');">
+                <h5>Tacos</h5>
+            </div>
+            <div class="card">
+                <img src="/fast-food/Food Menu/img/img4.jpg" alt="nachos"
+                    onclick="window.open('/fast-food/Menu List/HTML/Nachos.html' , '_blank');">
+                <h5>Nachos</h5>
+            </div>
+            <div class="card">
+                <img src="/fast-food/Food Menu/img/img5.jpeg" alt="noodles"
+                    onclick="window.open('/fast-food/Menu List/HTML/Nuddel.html' , '_blank');">
+                <h5>Noodles</h5>
+            </div>
+        </div>
+    </div>
+
+    <section class="home" id="home">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <!-- <div class="numbertext">1 / 4</div> -->
+                <img src="/fast-food/Food Menu/img/slide-1.png" style="width:100%" alt="burger" class="home__img">
+                <!-- <div class="text">Caption Text</div> -->
+            </div>
+
+            <div class="mySlides fade">
+                <!-- <div class="numbertext">2 / 4</div> -->
+                <img src="/fast-food/Food Menu/img/slide-2.png" style="width:100%" alt="burger" class="home__img">
+                <!-- <div class="text">Caption Two</div> -->
+            </div>
+
+            <div class="mySlides fade">
+                <!-- <div class="numbertext">3 / 4</div> -->
+                <img src="/fast-food/Food Menu/img/slide-3.png" style="width:100%" alt="burger" class="home__img">
+                <!-- <div class="text">Caption Three</div> -->
+            </div>
+
+            <div class="mySlides fade">
+                <!-- <div class="numbertext">4 / 4</div> -->
+                <img src="/fast-food/Food Menu/img/slide-4.png" style="width:100%" alt="burger" class="home__img">
+                <!-- <div class="text">Caption four</div> -->
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+        </div>
+        <br>
+    </section>
+
+
+    <script>
+        /*=============== SHOW MENU ===============*/
+        // const navMenu = document.getElementById("nav-menu");
+        // const navClose = document.getElementById("nav-close");
+        // const navToggle = document.getElementById("nav-toggle");
+
+        /*===== MENU SHOW =====*/
+        /* Validate if constant exists */
+        // if (navToggle) {
+        //     navToggle.addEventListener("click", () => {
+        //         navMenu.classList.add("show-menu");
+        //     });
+        // }
+
+        /*===== MENU HIDDEN =====*/
+        /* Validate if constant exists */
+        // if (navClose) {
+        //     navClose.addEventListener("click", () => {
+        //         navMenu.classList.remove("show-menu");
+        //     });
+        // }
+        /*=============== REMOVE MENU MOBILE ===============*/
+        /*=============== HOME SWIPER ===============*/
+        // var homeSwiper = new Swiper(".home-swiper", {
+        //     spaceBetween: 30,
+        //     grubCursor: true,
+        //     loop: true,
+        //     pagination: {
+        //         el: ".swiper-pagination",
+        //         clickable: true,
+        //     },
+        //     navigation: {
+        //         nextEl: ".swiper-button-next",
+        //         prevEl: ".swiper-button-prev",
+        //     },
+        // });
+
+        /*=============== DEALS TAB ===============*/
+        // const tabs = document.querySelectorAll("[data-target]");
+        // const tabContents = document.querySelectorAll("[content]");
+
+        // tabs.forEach((tab) => {
+        //     tab.addEventListener("click", () => {
+        //         const target = document.querySelector(tab.dataset.target);
+
+        //         tabContents.forEach((tabContent) => {
+        //             tabContent.classList.remove("active-tab");
+        //         });
+
+        //         target.classList.add("active-tab");
+        //         tabs.forEach((tab) => {
+        //             tab.classList.remove("active-tab");
+        //         });
+        //         tab.classList.add("active-tab");
+        //     });
+        // });
+
+        /*=============== SHOW SCROLL UP ===============*/
+        // function scrollUp() {
+        //     const scrollup = document.getElementById("scroll-up");
+
+        //     if (this.scrollY >= 300) {
+        //         scrollup.classList.add("show-scroll");
+        //     } else {
+        //         scrollup.classList.remove("show-scroll");
+        //     }
+        // }
+
+        // window.addEventListener("scroll", scrollUp);
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+
+        }
+
+
+    </script>
+</body>
+
+</html>

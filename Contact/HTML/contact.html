@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/fast-food/Contact/img/logowp.png" type="image/x-icon">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/fast-food/Contact/CSS/contact.css">
+</head>
+<body>
+    <div class="h-full">
+        <header class="active" aria-hidden="true">
+            <div class="navb">
+                <div class="navbdiv h-10">
+                    <img class="logo-img" width="50" height="40" src="/fast-food/Contact/img/logowp.png" alt="center">
+                </div>
+                <div class="navbmenu h-10">
+                    <ul class="ul-links">
+                        <li><a href="/fast-food/Home/HTML/projectfood.html">Home<span></span></a></li>
+                        <li><a href="/fast-food/Service/HTML/service.html">Services<span></span></a></li>
+                        <li><a href="/fast-food/About/HTML/about.html">About Us<span></span></a></li>
+                        <li><a href="/fast-food/Contact/HTML/contact.html">Contact Us<span></span></a></li>
+                    </ul>
+                </div>
+                <div class="credential">
+                    <button type="button" onclick="location.href='/fast-food/Login/HTML/Login.html'">
+                        log in
+                    </button>
+                    <button type="button" onclick="location.href='/fast-food/Registration/HTML/registration.html'">
+                        sign-up
+                    </button>
+                </div>
+            </div>
+        </header>
+    </div>
+    <div class="bg">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita ducimus quaerat ex molestias architecto, ut est quae enim maiores odit ullam vero excepturi voluptates laboriosam harum repellendus amet iure fugit.</p>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Fill the form to Contact Us !</h2>
+        <form class="form">
+            <div class="form-element">
+                <label for="name">Name</label>
+                <input placeholder="Enter Your Name" type="text" name="name" id="name" required>
+            </div>
+            <div class="form-element">
+                <label for="email">Email</label>
+                <input placeholder="Enter Your Email" type="email" name="email" id="email" required>
+            </div>
+            <div class="form-element">
+                <label for="message">Message</label>
+                <textarea name="message" placeholder="Please Enter Your Problem" id="message" cols="30" rows="6" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+    height: 130vh;
+    width: 97vw;
+    background: center/cover no-repeat url(/fast-food/Home/img/1.jpg);
+}
+
+.background img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* header logo,navbar,login,signup start */
+.navb {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px;
+    padding-left: 15px;
+}
+
+/* logo start */
+.navbdiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* logo end */
+/* navbar start */
+.navbmenu ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.navbmenu ul li a {
+    position: relative;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(255, 230, 230);
+    padding: 6px 15px;
+    transition: .5s;
+}
+
+.navbmenu ul li a:hover {
+    font-size: 22px;
+    color: #0ef;
+}
+
+.navbmenu ul li a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom: 2px solid #0ef;
+    border-radius: 15px;
+    transform: scale(0) translate Y(50px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.navbmenu ul li a:hover span {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.right {
+    width: 500px;
+    height: 440px;
+    background-image: url('/fast-food/Home/img/bg11.png');
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    align-items: center;
+    margin-left: 849px;
+    margin-top: 50px;
+}
+
+.right::before {
+    width: 410px;
+    height: 410px;
+    border: 2px solid white;
+    content: '';
+    position: absolute;
+    border-radius: 430px;
+}
+
+/* navbar end */
+.credential {
+    margin-top: 8px;
+}
+
+.credential button::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #00fffc, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+    position: absolute;
+}
+
+.credential button:hover {
+    background: transparent;
+    box-shadow: 0 0 20px 5px #00fffc;
+    font-size: 15px;
+}
+
+.credential button {
+    position: relative;
+    margin: 1px;
+    padding: 5px 10px;
+    height: 34px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    background: transparent;
+}
+
+/* header logo,navbar,login,signup end */
+.background {
+    border: 1px solid rgb(180, 180, 180);
+    position: absolute;
+    padding: 3px 20px;
+    top: 100px;
+    background-color: rgba(0, 0, 0, 0.596);
+    border-radius: 10px;
+    left: 41%;
+    display: inline-block;
+}
+
+.overlay-text {
+    font-family: 'Smooch', cursive;
+    /*OR  font-family: 'Protest Riot', sans-serif; */
+    color: #ad0f0fce;
+    width: 100%;
+    font-size: 65px;
+    text-align: center;
+    position: relative;
+}
+
+.overlay-text_contant {
+    color: rgb(255, 255, 255);
+    font-family: cursive;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.text p {
+    font-size: 65px;
+    margin-left: 35rem;
+    margin-top: 15rem;
+    color: #d8c8c8;
+    font-style: oblique;
+}
+
+.menubutton button {
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    font-size: 20px;
+    position: absolute;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: transparent;
+    background-size: 400%;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.23, 1, 0.320, 1);
+    margin-left: 610px;
+    margin-top: 18.6rem;
+}
+
+.menubutton button:hover::before {
+    transform: scaleY(1);
+}
+
+.button-content {
+    position: relative;
+    z-index: 1;
+}
+
+.menubutton button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(82.3deg, rgb(199, 120, 67) 10.8%, rgb(94, 86, 219) 94.3%);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.menubutton button:active {
+    scale: 0.9;
+}
+
+/* Social Share Buttons Start*/
+li a,
+i {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav {
+    position: fixed;
+    left: 84rem;
+    bottom: 12.4rem;
+    width: 70px;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0);
+    border-radius: 30px;
+}
+
+nav li {
+    height: 55px;
+    position: relative;
+}
+
+nav li a span {
+    display: none;
+}
+
+nav li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 55px;
+    padding-left: 25%;
+    border-bottom: 1px solid transparent;
+    /*you can replace color(#3d3d3d) in transperent*/
+    border-radius: 30px;
+    color: #fff;
+    transition: all 0.2s linear;
+    transform: translate3d(-100%, 0, 0);
+}
+
+nav li a:hover {
+    width: 200px;
+    z-index: 1;
+    border-radius: 30px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+nav li:nth-child(1):hover a {
+    background-color: #49c456;
+}
+
+nav li:nth-child(2):hover a {
+    background-color: #4064ac;
+}
+
+nav li:nth-child(3):hover a {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    /*OR background-color: #d12679;*/
+}
+
+nav li:nth-child(4):hover a {
+    background-color: #24292f;
+}
+
+nav li:nth-child(5):hover a {
+    background-color: #0f1419;
+}
+
+nav ul li a:hover span {
+    display: block;
+    padding-left: 40%;
+}
+
+nav li a i {
+    position: absolute;
+    top: 17px;
+    left: 30px;
+}
+
+/* Social Share Buttons End*/
+/* footer,logo,text,playstore,texts start */
+/* footer {
+            width: 1349px;
+        }
+        footer{
+            background-color: rgba(226, 216, 216, 0.87);
+        } */
+/* Play Store Button Start */
+.playstore-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 9999px;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 0.625rem 1.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 1);
+    outline: 0;
+    transition: all .2s ease;
+    text-decoration: none;
+}
+
+.playstore-button:hover {
+    background-color: transparent;
+    color: rgba(0, 0, 0, 1);
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.texts {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+}
+
+.text-1 {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+}
+
+.text-2 {
+    font-weight: 600;
+}
+
+/* Play Store Button End */
+/* footer,logo,text,playstore,texts end */
+.footerfirst {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+    width: 1349px;
+    height: 21rem;
+    margin-top: 2.4rem;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}

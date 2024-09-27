@@ -1,0 +1,318 @@
+* {
+    box-sizing: border-box
+}
+
+body {
+    /* font-family: Verdana, sans-serif; */
+    margin: 0;
+    padding: 0;
+    /* line-height: 1.6; */
+    /* background-color: black; */
+    background-image: url("/fast-food/Food Menu/img/home-bg.jpg");
+}
+
+
+/*cards*/
+.cards .card {
+    text-align: center;
+    margin: 18px 10px 40px;
+    transition: 0.2s ease-in;
+}
+
+.cards .flex {
+    flex-wrap: wrap;
+}
+
+.cards .card h5 {
+    font-size: 15px;
+    margin: 10px 0px;
+}
+
+.cards .card img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.cards .card:hover {
+    transform: translateX(-15px) translateY(-15px);
+}
+
+.mobile {
+    display: none;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.card {
+    color: black;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 12px 14px;
+    padding: 25px;
+    margin: 10px;
+}
+
+.cards {
+    margin: 0 auto;
+    overflow: auto;
+}
+
+/* .card {
+    padding: 15px;
+} */
+@media (max-width: 1100px) {
+    .container .flex {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.cards .flex {
+    flex-direction: row;
+}
+
+
+/*=============== HOME ===============*/
+.home {
+    padding-block: 12.5rem 4.25rem;
+    position: relative;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 30%;
+    width: 980px;
+    height: 400px;
+    background-color: var(--second-color);
+    border-radius: 12rem 0 0 12rem;
+}
+
+.mySlides {
+    display: none
+}
+
+img {
+    vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -20px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: -16rem;
+    /* border-radius: 3px 0 0 3px; */
+}
+
+.prev {
+    left: -16rem;
+    /* border-radius: 0 3px 3px 0; */
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: transparent;
+    /*  rgba(0, 0, 0, 0.8) */
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/4 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+/* header logo,navbar,login,signup start */
+.navb {
+    display: flex;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    margin: 10px;
+    padding-left: 15px;
+}
+
+/* logo start */
+.navbdiv {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* logo end */
+/* navbar start */
+.navbmenu ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.navbmenu ul li a {
+    position: relative;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgb(255, 230, 230);
+    padding: 6px 15px;
+    transition: .5s;
+}
+
+.navbmenu ul li a:hover {
+    font-size: 22px;
+    color: #0ef;
+}
+
+.navbmenu ul li a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom: 2px solid #0ef;
+    border-radius: 15px;
+    transform: scale(0) translate Y(50px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.navbmenu ul li a:hover span {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.right {
+    width: 500px;
+    height: 440px;
+    background-image: url('/fast-food/Food Menu/img/bg11.png');
+    background-size: cover;
+    background-position: right;
+    display: flex;
+    align-items: center;
+    margin-left: 849px;
+    margin-top: 50px;
+}
+
+.right::before {
+    width: 410px;
+    height: 410px;
+    border: 2px solid white;
+    content: '';
+    position: absolute;
+    border-radius: 430px;
+}
+
+/* navbar end */
+.credential {
+    margin-top: 8px;
+}
+
+.credential button::before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #00fffc, transparent);
+    transform: translateX(-100%);
+    transition: 0.6s;
+    position: absolute;
+}
+
+.credential button:hover {
+    background: transparent;
+    box-shadow: 0 0 20px 5px #00fffc;
+    font-size: 15px;
+}
+
+.credential button {
+    position: relative;
+    margin: 1px;
+    padding: 5px 10px;
+    height: 34px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    overflow: hidden;
+    margin-right: 20px;
+    letter-spacing: 1px;
+    background: transparent;
+}
+
+.ul-links {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* header logo,navbar,login,signup end */
